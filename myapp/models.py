@@ -6,9 +6,9 @@ from django.apps import AppConfig
 
 # create categories model
 class Category(models.Model):
-    default_auto_field = 'django.db.models.AutoField' 
+    sno= models.AutoField(primary_key=True)
     title = models.CharField(max_length=100)
-    # description = models.TextField()
+  
 
     def __str__(self):
         return self.title
@@ -17,6 +17,7 @@ class Category(models.Model):
 
 # create Image model
 class Image(models.Model):
+    sno= models.AutoField(primary_key=True)
     title = models.CharField(max_length=200)
     description = models.TextField()
     image = models.ImageField(upload_to='images')
